@@ -5,6 +5,20 @@ import Navbar from '../../components/Navbar';
 
 const BASE_SOURCE = 'https://komikindo.ch';
 
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: 'blocking',
+  };
+}
+
+export async function getStaticProps() {
+  return {
+    props: {},
+    revalidate: 60,
+  };
+}
+
 export default function Reader() {
   const router = useRouter();
   const { slug } = router.query;
