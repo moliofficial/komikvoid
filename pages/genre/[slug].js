@@ -6,6 +6,20 @@ import ComicCard from '../../components/ComicCard';
 import Pagination from '../../components/Pagination';
 import Footer from '../../components/Footer';
 
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: 'blocking',
+  };
+}
+
+export async function getStaticProps() {
+  return {
+    props: {},
+    revalidate: 60,
+  };
+}
+
 export default function Genre() {
   const router = useRouter();
   const { slug } = router.query;

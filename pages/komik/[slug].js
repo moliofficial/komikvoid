@@ -6,6 +6,20 @@ import Footer from '../../components/Footer';
 
 const BASE_SOURCE = 'https://komikindo.ch';
 
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: 'blocking',
+  };
+}
+
+export async function getStaticProps() {
+  return {
+    props: {},
+    revalidate: 60,
+  };
+}
+
 export default function KomikDetail() {
   const router = useRouter();
   const { slug } = router.query;
